@@ -11,17 +11,17 @@ export default function AddProjForm({ setProject, setError }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    const trimmedTitle = title.trim();
-    const trimmedDescription = description.trim();
-    if (!trimmedTitle || !trimmedDescription) {
+    const Title = title.trim();
+    const Description = description.trim();
+    if (!Title || !Description) {
       setError('Please fill in all fields');
       return;
     }
 
     const newProject = {
       id: Date.now(),
-      title: trimmedTitle,
-      description: trimmedDescription
+      title: Title,
+      description: Description
     };
 
     setProject(previousProject => [...previousProject, newProject]);
